@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NotificationControl">
+   <top>
+      <AnchorPane prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="160.0" fitWidth="600.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/截圖%202023-08-03%20下午1.31.30.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="AddNotiButton" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#ClickAddNotiButton" prefHeight="20.0" prefWidth="131.0" style="-fx-background-color: #E8BCB9;" text="Add Notification" />
+            <ImageView fitHeight="59.0" fitWidth="68.0" layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/UndoIcon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="UndoButton" layoutX="14.0" layoutY="-1.0" mnemonicParsing="false" onAction="#ClickUndo" opacity="0.0" prefHeight="56.0" prefWidth="64.0" />
+            <ImageView fitHeight="116.0" fitWidth="151.0" layoutX="449.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/截圖%202023-08-03%20下午1.20.17.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView fx:id="table" prefHeight="301.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="TimeColumn" prefWidth="82.0" style="-fx-background-color: #AE445A;" text="Time" />
+          <TableColumn fx:id="TitleColumn" prefWidth="108.18948364257812" style="-fx-background-color: #6DA5C0;" text="Title" />
+            <TableColumn fx:id="MondayColumn" prefWidth="58.08293151855469" style="-fx-background-color: #F39F5A;" text="Monday" />
+            <TableColumn fx:id="TuesdayColumn" prefWidth="61.816650390625" text="Tuesday" />
+            <TableColumn fx:id="wednesdayColumn" prefWidth="70.31671142578125" text="wednesday" />
+            <TableColumn fx:id="ThursdayColumn" prefWidth="65.36996459960938" text="Thursday" />
+            <TableColumn fx:id="FridayColumn" prefWidth="41.230926513671875" text="Friday" />
+            <TableColumn fx:id="SaturdayColumn" prefWidth="57.0947265625" text="Saturday" />
+            <TableColumn fx:id="SundayColumn" prefWidth="51.8284912109375" text="Sunday" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogIn">
+   <left>
+      <AnchorPane prefHeight="401.0" prefWidth="206.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="215.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/截圖%202023-07-25%20下午2.22.29.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="70.0" layoutY="113.0" text="Your">
+               <font>
+                  <Font name="Cochin" size="34.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="163.0" text="Personal">
+               <font>
+                  <Font name="Cochin" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="220.0" text="Health Tracker">
+               <font>
+                  <Font name="Cochin" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="59.0" text="DeepBot" textFill="#830202">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="452.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="115.0" fitWidth="398.0" layoutX="1.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Sea.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="username" layoutX="200.0" layoutY="126.0" promptText="Username" />
+            <Label layoutX="56.0" layoutY="125.0" text="Username:">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="197.0" text="Password:">
+               <font>
+                  <Font name="Times New Roman Bold" size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="200.0" layoutY="198.0" promptText="Password" />
+            <Button fx:id="button" layoutX="182.0" layoutY="301.0" mnemonicParsing="false" onAction="#userLogIn" text="Start" />
+            <Label layoutX="135.0" layoutY="56.0" text="Log In">
+               <font>
+                  <Font name="Arial Bold" size="39.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="-11.0" layoutY="168.0">
+               <image>
+                  <Image url="@../Img/IMG_0375.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="159.0" layoutY="-9.0" style="-fx-rotate: 90;">
+               <image>
+                  <Image url="@../Img/IMG_0375.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="wrongLogIn" layoutX="221.0" layoutY="139.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

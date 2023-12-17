@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1F1F29;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlAddNoti">
+   <children>
+      <Label layoutX="11.0" prefHeight="40.0" prefWidth="66.0" text="Time:" textFill="#fbe4d8">
+         <font>
+            <Font name="Noto Sans Oriya" size="23.0" />
+         </font></Label>
+      <TextField fx:id="NotiTime" layoutX="77.0" layoutY="8.0" prefHeight="26.0" prefWidth="66.0" promptText="Use 24H notation(enter without colon e.g. 1122 = 11:22)" />
+      <TextField fx:id="NotiTitle" layoutX="197.0" layoutY="8.0" prefHeight="26.0" prefWidth="66.0" />
+      <Button fx:id="AddNotification" layoutX="268.0" layoutY="5.0" mnemonicParsing="false" onAction="#Add" style="-fx-background-color: #fbe4d8;" text="Add Notification" />
+      <Label layoutX="149.0" layoutY="1.0" prefHeight="40.0" prefWidth="66.0" text="Title:" textFill="#fbe4d8">
+         <font>
+            <Font name="Noto Sans Oriya" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutY="43.0" prefHeight="40.0" prefWidth="66.0" text="Day:" textFill="#fbe4d8">
+         <font>
+            <Font name="Noto Sans Oriya" size="23.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbMonday" layoutX="52.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #6DA5C0;" text="Monday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbTuesday" layoutX="127.0" layoutY="48.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #6DA5C0;" text="Tuesday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbWednesday" layoutX="197.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #6DA5C0;" text="Wednesday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbThursday" layoutX="282.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #6DA5C0;" text="Thursday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbFriday" layoutX="360.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #6DA5C0;" text="Friday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbSaturday" layoutX="429.0" layoutY="51.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #6DA5C0;" text="Saturday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbSunday" layoutX="505.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #6DA5C0;" text="Sunday">
+         <font>
+            <Font size="8.0" />
+         </font></RadioButton>
+      <Button fx:id="DeleteRow" layoutX="390.0" layoutY="5.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: #fbe4d8;" text="Delete" />
+      <TableView fx:id="table" layoutY="79.0" prefHeight="321.0" prefWidth="600.0" style="-fx-background-color: #1F1F29; -fx-table-cell-border-color: transparent;">
+         <columns>
+            <TableColumn id="TimeColumn" fx:id="TimeColumn" prefWidth="81.0" style="-fx-background-color: #AE445A; -fx-table-cell-border-color: transparent;" text="        Time" />
+            <TableColumn id="TitleColumn" fx:id="TitleColumn" prefWidth="109.5" style="-fx-background-color: #6DA5C0; -fx-table-cell-border-color: transparent;" text="             Title" />
+            <TableColumn id="MondayColumn" fx:id="MondayColumn" prefWidth="58.08293151855469" style="-fx-background-color: #F39F5A; -fx-table-cell-border-color: transparent;" text="Monday" />
+            <TableColumn id="TuesdayColumn" fx:id="TuesdayColumn" prefWidth="61.816650390625" style="-fx-background-color: #AE445A; -fx-table-cell-border-color: transparent;" text="Tuesday" />
+            <TableColumn id="wednesdayColumn" fx:id="wednesdayColumn" prefWidth="70.31671142578125" style="-fx-background-color: #6DA5C0; -fx-table-cell-border-color: transparent;" text="wednesday" />
+            <TableColumn id="ThursdayColumn" fx:id="ThursdayColumn" prefWidth="65.36996459960938" style="-fx-background-color: #F39F5A; -fx-table-cell-border-color: transparent;" text="Thursday" />
+            <TableColumn id="FridayColumn" fx:id="FridayColumn" prefWidth="41.230926513671875" style="-fx-background-color: #AE445A; -fx-table-cell-border-color: transparent;" text="Friday" />
+            <TableColumn id="SaturdayColumn" fx:id="SaturdayColumn" prefWidth="57.0947265625" style="-fx-background-color: #6DA5C0; -fx-table-cell-border-color: transparent;" text="Saturday" />
+            <TableColumn id="SundayColumn" fx:id="SundayColumn" prefWidth="53.0" style="-fx-background-color: #F39F5A; -fx-table-cell-border-color: transparent;" text="Sunday" />
+         </columns>
+      </TableView>
+      <Button fx:id="UpdateRow" layoutX="453.0" layoutY="6.0" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: #fbe4d8;" text="Update" />
+      <ImageView fitHeight="41.0" fitWidth="60.0" layoutX="535.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/UndoIcon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="UndoButton" layoutX="523.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickUndo" opacity="0.0" prefHeight="31.0" prefWidth="66.0" />
+   </children>
+</AnchorPane>

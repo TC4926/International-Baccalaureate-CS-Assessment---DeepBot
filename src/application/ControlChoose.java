@@ -33,6 +33,6 @@ public class ControlChoose {
 		
 		private void checkGraph() throws IOException{
 			Main b = new Main();
-			b.changeScene("Graph.fxml");
+			b.changeScene("SelectGraph.fxml");
 		}
 }

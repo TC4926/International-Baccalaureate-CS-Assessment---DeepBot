@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -13,14 +14,22 @@
          <children>
             <Button fx:id="UploadFile" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#getText" text="Upload" />
             <Button fx:id="DeleteFile" layoutX="92.0" layoutY="14.0" mnemonicParsing="false" text="Delete" />
-            <LineChart fx:id="LineChart" animated="false" layoutX="20.0" layoutY="53.0" prefHeight="333.0" prefWidth="500.0" title="Health Tracking">
+            <LineChart fx:id="LineChart" animated="false" layoutX="50.0" layoutY="53.0" prefHeight="157.0" prefWidth="193.0" title="Health Tracking">
+              <xAxis>
+                <CategoryAxis label="Days" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Glucose Level" minorTickCount="10" side="LEFT" tickLabelGap="1.0" upperBound="200.0" />
+              </yAxis>
+            </LineChart>
+            <AreaChart layoutX="256.0" layoutY="77.0" prefHeight="206.0" prefWidth="330.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
               <yAxis>
                 <NumberAxis side="LEFT" />
               </yAxis>
-            </LineChart>
+            </AreaChart>
          </children>
       </AnchorPane>
    </top>

@@ -265,23 +265,29 @@ int id;
     	
     	 long time = Time;
     	 long hours = time / 100;
-    	 long minutes = (time - hours * 100) % 60;
+    	 long minutes = (time - hours * 100);
     	 long SetTime = (hours * 3600000) + (minutes * 60000); 
     	 
     	 TimeZone.setDefault(TimeZone.getTimeZone("Asia/Taipei"));
+    	 SimpleDateFormat CurrentDay = new SimpleDateFormat("EEEE");
+    	 Date date2 = new Date();
     	 SimpleDateFormat CurrentHour = new SimpleDateFormat("HH");
     	 Date date = new Date();
     	 SimpleDateFormat CurrentMinute = new SimpleDateFormat("mm");
     	 Date date1 = new Date();
     	 
-    	long current_hour = Integer.parseInt(CurrentHour.format(date));
-    	long current_minute = Integer.parseInt(CurrentMinute.format(date1));
+
+    			 
     	 
+        long current_hour = Integer.parseInt(CurrentHour.format(date));
+    	long current_minute = Integer.parseInt(CurrentMinute.format(date1));
+    	String current_weekday = String.valueOf(CurrentDay.format(date2));
+    	
     	long CurrentTime = (current_hour * 3600000) + (current_minute * 60000);
     	
     	long ActualTime = SetTime - CurrentTime;
     	 
-    	 
+    	
     	Timer timer = new Timer();
     	TimerTask timertask = new TimerTask() {
     		@Override

@@ -8,6 +8,8 @@ module Please {
 	requires controlsfx;
 	requires TrayTester;
 	requires com.opencsv;
+	requires java.desktop;
+	requires javafx.swing;
 
 	  opens application to javafx.graphics, javafx.fxml;
 }

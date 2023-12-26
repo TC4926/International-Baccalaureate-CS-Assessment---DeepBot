@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlLinePromptSpecifications">
+   <children>
+      <Label layoutX="73.0" layoutY="138.0" prefHeight="21.0" prefWidth="66.0" text="Chart Title:" />
+      <TextField fx:id="ChartTitle" layoutX="139.0" layoutY="135.0" />
+      <Label layoutX="73.0" layoutY="172.0" prefHeight="21.0" prefWidth="66.0" text="X-Axis Title:" />
+      <TextField fx:id="XAxisTitle" layoutX="139.0" layoutY="169.0" />
+      <Label layoutX="73.0" layoutY="208.0" prefHeight="21.0" prefWidth="66.0" text="Y-Axis Title:" />
+      <TextField fx:id="YAxisTitle" layoutX="139.0" layoutY="205.0" />
+      <Label fx:id="ChartID" layoutX="57.0" layoutY="246.0" text="Enter Chart ID:" />
+      <TextField fx:id="IDChart" layoutX="139.0" layoutY="242.0" />
+      <Button fx:id="FinishButton" layoutX="21.0" layoutY="354.0" mnemonicParsing="false" onAction="#ClickFinish" text="Finish Filling Out Information and Ready to Upload CSV Data" />
+      <Label fx:id="ErrorMessage" layoutX="83.0" layoutY="25.0" prefHeight="29.0" prefWidth="219.0" text="Line Chart Creation!">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

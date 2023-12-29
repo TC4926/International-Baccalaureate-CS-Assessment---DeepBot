@@ -78,7 +78,7 @@
                   <Image url="@../Img/IMG_0375.png" />
                </image>
             </ImageView>
-            <Label fx:id="wrongLogIn" layoutX="221.0" layoutY="139.0" textFill="RED" />
+            <Label fx:id="wrongLogIn" layoutX="204.0" layoutY="160.0" textFill="RED" />
          </children>
       </AnchorPane>
    </center>

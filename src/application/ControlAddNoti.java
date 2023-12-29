@@ -71,6 +71,7 @@ import javafx.scene.control.TableRow;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
+import java.util.Locale;
 
 
 
@@ -265,57 +266,130 @@ int id;
     	
     	 long time = Time;
     	 long hours = time / 100;
-    	 long minutes = (time - hours * 100);
+    	 long minutes = time % 100;
     	 long SetTime = (hours * 3600000) + (minutes * 60000); 
     	 
     	 TimeZone.setDefault(TimeZone.getTimeZone("Asia/Taipei"));
-    	 SimpleDateFormat CurrentDay = new SimpleDateFormat("EEEE");
-    	 Date date2 = new Date();
-    	 SimpleDateFormat CurrentHour = new SimpleDateFormat("HH");
+    	 SimpleDateFormat CurrentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH);
     	 Date date = new Date();
-    	 SimpleDateFormat CurrentMinute = new SimpleDateFormat("mm");
+    	 SimpleDateFormat CurrentHour = new SimpleDateFormat("HH");
     	 Date date1 = new Date();
+    	 SimpleDateFormat CurrentMinute = new SimpleDateFormat("mm");
+    	 Date date2 = new Date();
+    	 SimpleDateFormat CurrentSecond = new SimpleDateFormat("ss");
+    	 Date date3 = new Date();
     	 
-
-    			 
-    	 
-        long current_hour = Integer.parseInt(CurrentHour.format(date));
-    	long current_minute = Integer.parseInt(CurrentMinute.format(date1));
-    	String current_weekday = String.valueOf(CurrentDay.format(date2));
+    	String current_day = String.valueOf(CurrentDay.format(date));
+        long current_hour = Integer.parseInt(CurrentHour.format(date1));
+    	long current_minute = Integer.parseInt(CurrentMinute.format(date2));
+    	long current_second = Integer.valueOf(CurrentSecond.format(date3));
     	
-    	long CurrentTime = (current_hour * 3600000) + (current_minute * 60000);
+    	long CurrentTime = (current_hour * 3600000) + (current_minute * 60000) + (current_second * 1000);
     	
     	long ActualTime = SetTime - CurrentTime;
-    	 
+    	System.out.println(current_day); 
+    	if(ActualTime > 0 && Monday == true && current_day.equals("Monday")){
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+    	}else if (ActualTime > 0 && Tuesday == true && current_day.equals("Tuesday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
     	
-    	Timer timer = new Timer();
-    	TimerTask timertask = new TimerTask() {
-    		@Override
-    		public void run() {
-    		Platform.runLater( () -> {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle(NotiTitle.getText());
-                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
-                Optional<ButtonType> result = alert.showAndWait();
-
-
-                if(result.isEmpty()){
-                    System.out.println("Alert closed");
-                    
-                } else if(result.get() == ButtonType.OK){
-                    System.out.println("OK!");
-                    
-                } else if(result.get() == ButtonType.CANCEL){
-                    System.out.println("Never!");
-                    
-                }
-            });
+    	}else if(ActualTime > 0 && wednesday == true && current_day.equals("Wednesday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+        
+    	}else if(ActualTime > 0 && Thursday == true && current_day.equals("Thursday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+    	}else if(ActualTime > 0 && Friday == true && current_day.equals("Friday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+    	}else if(ActualTime > 0 && Saturday == true && current_day.equals("Saturday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+    	}else if (ActualTime > 0 && Sunday == true && current_day.equals("Sunday")) {
+    		Timer timer = new Timer();
+        	TimerTask timertask = new TimerTask() {
+        		@Override
+        		public void run() {
+        		Platform.runLater( () -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle(NotiTitle.getText());
+                    alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                    alert.showAndWait();
+                });
+        	}
+        	};
+        	timer.schedule(timertask, ActualTime);
+    	
     	}
-    	};
-    	
-    	
-    	
-    	timer.schedule(timertask, ActualTime);
     }
    	
     	
@@ -375,9 +449,139 @@ int id;
             Logger.getLogger(Notification.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     
-    public void table()
+    public void alertNoti() throws SQLException {
+     pst = con.prepareStatement("select Time,Title,Monday,Tuesday,wednesday,Thursday,Friday,Saturday,Sunday from notification");
+     ResultSet rs = pst.executeQuery();
+     while(rs.next()) {
+    	 int time = rs.getInt("Time");
+    	 long hours = time / 100;
+    	 long minutes = time % 100;
+    	 long SetTime = (hours * 3600000) + (minutes * 60000); 
+   	 
+    	 TimeZone.setDefault(TimeZone.getTimeZone("Asia/Taipei"));
+    	 SimpleDateFormat CurrentDay = new SimpleDateFormat("EEEE");
+    	 Date date = new Date();
+    	 SimpleDateFormat CurrentHour = new SimpleDateFormat("HH");
+    	 Date date1 = new Date();
+    	 SimpleDateFormat CurrentMinute = new SimpleDateFormat("mm");
+    	 Date date2 = new Date();
+    	 SimpleDateFormat CurrentSecond = new SimpleDateFormat("ss");
+    	 Date date3 = new Date();
+   	 
+    	 String current_day = String.valueOf(CurrentDay.format(date));
+    	 long current_hour = Integer.parseInt(CurrentHour.format(date1));
+   	 	long current_minute = Integer.parseInt(CurrentMinute.format(date2));
+   	 	long current_second = Integer.valueOf(CurrentSecond.format(date3));
+   	
+   	 	long CurrentTime = (current_hour * 3600000) + (current_minute * 60000) + (current_second * 1000);
+   	
+   	 	long ActualTime = SetTime - CurrentTime;
+   	
+   	 	if(ActualTime > 0 && rs.getBoolean("Monday") == true && current_day.equals("Monday")) {
+   	 		Timer timer = new Timer();
+   	 		TimerTask timertask = new TimerTask() {
+   	 			@Override
+   	 			public void run() {
+   	 				Platform.runLater( () -> {
+   	 					Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+   	 					alert.setTitle(NotiTitle.getText());
+   	 					alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+   	 					alert.showAndWait();
+   	 				});
+   	 			}
+   	 		};
+   	 		timer.schedule(timertask, ActualTime);
+	}else if (ActualTime > 0 && rs.getBoolean("Tuesday") == true && current_day.equals("Tuesday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}else if(ActualTime > 0 && rs.getBoolean("wednesday") == true && current_day.equals("Wednesday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}else if(ActualTime > 0 && rs.getBoolean("Thursday") == true && current_day.equals("Thursday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}else if(ActualTime > 0 && rs.getBoolean("Friday") == true && current_day.equals("Friday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}else if(ActualTime > 0 && rs.getBoolean("Saturday") == true && current_day.equals("Saturday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}else if (ActualTime > 0 && rs.getBoolean("Sunday") == true && current_day.equals("Sunday")) {
+		Timer timer = new Timer();
+    	TimerTask timertask = new TimerTask() {
+    		@Override
+    		public void run() {
+    		Platform.runLater( () -> {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle(NotiTitle.getText());
+                alert.setContentText("It is time for " + NotiTitle.getText() + ". Don't Forget!");
+                alert.showAndWait();
+            });
+    	}
+    	};
+    	timer.schedule(timertask, ActualTime);
+	}
+ }
+    } 
+    	
+   
+    public void table() throws SQLException
     {
         Connect();
         ObservableList<Notification> notification = FXCollections.observableArrayList();
@@ -440,7 +644,7 @@ int id;
            });
               return myRow;
                  });
-  
+         alertNoti();
   
     }
 	
@@ -460,6 +664,11 @@ int id;
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 		Connect();
-		table();
+		try {
+			table();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -183,19 +183,13 @@ public class ControlSelectGraph implements Initializable{
     	} else {
     		
     	Connect();
-    	   // Delay for 100 milliseconds before taking the snapshot
+    	  
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        // Capture a snapshot of FlowPaneChart
         WritableImage image = FlowPaneChart.snapshot(new SnapshotParameters(), null);
-
-       
-
-        // Create an ImageView and add it to SaveGraphFlowPane (if initialized)
         	final DropShadow shadow = new DropShadow();
         	shadow.setColor(Color.FORESTGREEN);
         	final Glow glow = new Glow();
@@ -243,10 +237,10 @@ public class ControlSelectGraph implements Initializable{
             ScrollPaneGraph.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
             ScrollPaneGraph.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 
-            // Example of how the Binding could be (here: take into account if the vertical scroll bar is showing or not):
+           
             imageView.fitWidthProperty().bind(Bindings.createDoubleBinding(() -> {
 
-                // Find the vertical scroll bar of the scroll pane:
+  
                 Optional<ScrollBar> verticalScrollBarOpt = ScrollPaneGraph.lookupAll(".scroll-bar").stream()
                         .filter(node -> node instanceof ScrollBar)
                         .map(node -> (ScrollBar) node)
